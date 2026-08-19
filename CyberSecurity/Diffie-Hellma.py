@@ -17,8 +17,8 @@ KB = pow(A, b, p)
 print("\nAlice's Public key:", A)
 print("BOb's public key:",B)
 
-print("\nAlice's shared Secret key:", KA)
-print("BOb's shared Secret key:",KB)
+print("\nAlice's shared Secret :", KA)
+print("BOb's shared Secret :",KB)
 
 if KA == KB :
     print("\nKey Exchange Sucessful !")
