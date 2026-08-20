@@ -21,5 +21,5 @@ message = int(input("Enter A Message : "))
 cipher = pow(message,e,n)
 print("Encrypted Message : ", cipher)
 
-message = pow(cipher,d,n)
-print("Decrypted Message :", message)
+plain = pow(cipher,d,n)
+print("Decrypted Message :", plain)
