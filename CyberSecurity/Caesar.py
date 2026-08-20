@@ -33,5 +33,4 @@ cipher = encrypt(message, shift)
 cipher=encrypt(message,shift)
 print("Encrypted:",cipher)
 
-plain=decrypt(cipher,shift)
 print("Decrypted:",cipher)
