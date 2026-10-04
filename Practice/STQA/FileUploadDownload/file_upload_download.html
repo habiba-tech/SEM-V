@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload and Download</title>
+</head>
+<body>
+
+<h2>File Upload</h2>
+
+<input type="file" id="fileUpload">
+<button onclick="uploadFile()">Upload</button>
+
+<p id="uploadStatus"></p>
+
+<hr>
+
+<h2>File Download</h2>
+
+<a href="sample.txt" download>
+    <button>Download File</button>
+</a>
+
+<script>
+function uploadFile() {
+    var file = document.getElementById("fileUpload").files[0];
+
+    if (file) {
+        document.getElementById("uploadStatus").innerHTML =
+            "File uploaded successfully: " + file.name;
+    } else {
+        document.getElementById("uploadStatus").innerHTML =
+            "Please select a file.";
+    }
+}
+</script>
+
+</body>
+</html>
