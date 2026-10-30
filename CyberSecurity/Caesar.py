@@ -29,7 +29,7 @@ def decrypt(text,shift):
 message = input("Enter message: ").upper()
 shift = int(input("Enter shift: "))
 cipher = encrypt(message, shift)
+plain = decrypt(cipher , shift)
 
 print("Encrypted:",cipher)
-
 print("Decrypted:",cipher)
