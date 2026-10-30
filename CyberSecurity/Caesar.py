@@ -30,7 +30,6 @@ message = input("Enter message: ").upper()
 shift = int(input("Enter shift: "))
 cipher = encrypt(message, shift)
 
-cipher=encrypt(message,shift)
 print("Encrypted:",cipher)
 
 print("Decrypted:",cipher)
