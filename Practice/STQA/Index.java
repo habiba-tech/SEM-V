@@ -1,45 +1,30 @@
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import java.util.List;
 
-public class WebTable {
+public class ObjectCounter {
     public static void main(String[] args) {
 
         WebDriver driver = new FirefoxDriver();
 
-        try {
-            driver.get("https://aldercrest.catlium.in/students.html");
+        driver.get("https://aldercrest.catlium.in/elements.html");
 
-            List<WebElement> rows = driver.findElements(
-                    By.cssSelector("#studentTable tbody tr")
-            );
+        int links = driver.findElements(By.tagName("a")).size();
+        int images = driver.findElements(By.tagName("img")).size();
+        int buttons = driver.findElements(By.tagName("button")).size();
+        int inputs = driver.findElements(By.tagName("input")).size();
 
-            int total = 0, above60 = 0;
+        int total = links + images + buttons + inputs;
 
-            for (WebElement row : rows) {
-                List<WebElement> cells = row.findElements(By.tagName("td"));
+        System.out.println("WEB PAGE OBJECT COUNT");
+        System.out.println("---------------------");
+        System.out.println("Links   : " + links);
+        System.out.println("Images  : " + images);
+        System.out.println("Buttons : " + buttons);
+        System.out.println("Inputs  : " + inputs);
+        System.out.println("---------------------");
+        System.out.println("Total Objects: " + total);
 
-                String name = cells.get(0).getText();
-                int java = Integer.parseInt(cells.get(1).getText());
-                int dbms = Integer.parseInt(cells.get(2).getText());
-
-                total++;
-
-                if (java > 60 || dbms > 60)
-                    above60++;
-
-                System.out.println(name + " | Java: " + java
-                        + " | DBMS: " + dbms);
-            }
-
-            double percentage = (above60 * 100.0) / total;
-
-            System.out.println("\nTotal Students: " + total);
-            System.out.println("Students Above 60: " + above60);
-            System.out.printf("Percentage: %.2f%%%n", percentage);
-
-        } finally {
-            driver.quit();
-        }
+        driver.quit();
     }
 }
